@@ -10,7 +10,8 @@
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         app:itemIconTint="@drawable/tabcolor"

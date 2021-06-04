@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/picture"
+                    android:clickable="true"
+                    android:id="@+id/recipe_Image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:paddingLeft="20dp"
+                    android:fontFamily="@font/lato_light"
+                    android:textSize="35dp"
+                    android:hint="Tên món: Cơm rang"
+                    android:background="@color/recipe_background"
+                    android:layout_margin="10dp"
+                    android:id="@+id/recipe_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:lines="4"
+                    android:background="@color/recipe_background"
+                    android:layout_margin="10dp"
+                    android:fontFamily="@font/lato_regular"
+                    android:id="@+id/recipe_description"
+                    android:textSize="20dp"
+                    android:hint="Món của bạn đến từ vùng miền nào,?
+                    Ai đã dạy bạn nấu món ăn này?
+                    \nBạn đã nấu cho những người nào ăn, Cảm nhận của họ nhưu thế nào"
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:paddingLeft="20dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:padding="5dp"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="Khẩu phần:"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/fornumber"
+                        android:padding="5dp"
+                        android:background="@color/recipe_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="1 người"
+                        android:textSize="20dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:weightSum="2"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:padding="5dp"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="Thời gian nấu:"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        android:textSize="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <EditText
+                        android:id="@+id/cookedtime"
+                        android:padding="5dp"
+                        android:background="@color/recipe_background"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="2 tiếng 30 phút"
+                        android:textSize="20dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ingridientLayout"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="20dp"
+                    android:weightSum="2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:padding="5dp"
+                        android:fontFamily="@font/lato_black"
+                        android:text="Nguyên liệu:"
+                        android:paddingLeft="20dp"
+                        android:layout_weight="1"
+                        android:textSize="25dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/btnAddNewIngridient"
+                        android:layout_marginLeft="43dp"
+                        android:fontFamily="@font/lato_black"
+                        android:textColor="@color/black"
+                        android:text="Nguyên liệu"
+                        android:textSize="15dp"
+                        android:drawableLeft="@drawable/ic_home_black_24dp"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="2"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:fontFamily="@font/lato_black"
+                    android:text="Cách làm:"
+                    android:paddingLeft="20dp"
+                    android:layout_weight="1"
+                    android:textSize="25dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:padding="5dp"
+                    android:id="@+id/tutorial"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/recipe_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sơ chế nguyên liệu\nCho thêm gia vị\nĐể lên chảo nóng đảo qua trong 15'\nĐổ ra bát rồi ăn"
+                    android:textSize="20dp"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/lato_regular"
+                android:text="Chia sẻ"
+                android:textSize="20dp"
+                android:backgroundTint="@color/orange"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

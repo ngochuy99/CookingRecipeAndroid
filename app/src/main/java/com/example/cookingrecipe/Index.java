@@ -1,7 +1,6 @@
 package com.example.cookingrecipe;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -12,38 +11,46 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.Window;
-import android.view.WindowManager;
 
-import com.example.cookingrecipe.Profile.Profile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Index extends AppCompatActivity {
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_index);
-        loadFragment(new Profile());
-    }
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        loadFragment(new newFeedFragment());
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             Fragment fragment;
+            System.out.println(item.getItemId());
             switch (item.getItemId()) {
-                case R.id.profile_tablayout:
+                case R.id.nav_profile:
                     fragment = new Profile();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.nav_search:
+                    fragment = new searchFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.nav_new:
+                    fragment = new postFragment();
+                    loadFragment(fragment);
+                    return true;
+                case R.id.nav_newfeed:
+                    fragment = new newFeedFragment();
                     loadFragment(fragment);
                     return true;
             }
             return false;
-        }
-    };
+        });
+    }
 
     private void loadFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

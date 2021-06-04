@@ -11,5 +11,6 @@
     <color name="gray">#A19E9E</color>
     <color name="blue">#005AA1</color>
     <color name="red">#F43636</color>
+    <color name="recipe_background">#F4F2E0</color>
 
 </resources>
